@@ -7,8 +7,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo1.conversordetemperatura.R
 import br.edu.ifsp.dmo1.conversordetemperatura.databinding.ActivityMainBinding
-import br.edu.ifsp.dmo1.conversordetemperatura.model.CelsiusStrategy
-import br.edu.ifsp.dmo1.conversordetemperatura.model.FahrenheitStrategy
+import br.edu.ifsp.dmo1.conversordetemperatura.model.CelsiusToFahrenheit
+import br.edu.ifsp.dmo1.conversordetemperatura.model.CelsiusToKelvin
+import br.edu.ifsp.dmo1.conversordetemperatura.model.FahrenheitToCelsius
+import br.edu.ifsp.dmo1.conversordetemperatura.model.FahrenheitToKelvin
+import br.edu.ifsp.dmo1.conversordetemperatura.model.KelvinToCelsius
+import br.edu.ifsp.dmo1.conversordetemperatura.model.KelvinToFahrenheit
+import br.edu.ifsp.dmo1.conversordetemperatura.model.ToCelsius
+import br.edu.ifsp.dmo1.conversordetemperatura.model.ToFahrenheit
 import br.edu.ifsp.dmo1.conversordetemperatura.model.TemperatureConverter
 
 class MainActivity : AppCompatActivity() {
@@ -25,12 +31,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setClickListener() {
-        binding.btnCelsius.setOnClickListener{
-            handleConversion(CelsiusStrategy)
+        binding.btnCtoF.setOnClickListener{
+            handleConversion(CelsiusToFahrenheit)
         }
 
-        binding.btnFahrenheit.setOnClickListener(View.OnClickListener {
-            handleConversion(FahrenheitStrategy)
+        binding.btnCtoK.setOnClickListener(View.OnClickListener {
+            handleConversion(CelsiusToKelvin)
+        })
+
+        binding.btnFtoC.setOnClickListener(View.OnClickListener {
+            handleConversion(FahrenheitToCelsius)
+        })
+
+        binding.btnFtoK.setOnClickListener(View.OnClickListener {
+            handleConversion(FahrenheitToKelvin)
+        })
+
+        binding.btnKtoC.setOnClickListener(View.OnClickListener {
+            handleConversion(KelvinToCelsius)
+        })
+
+        binding.btnKtoF.setOnClickListener(View.OnClickListener {
+            handleConversion(KelvinToFahrenheit)
         })
     }
 
@@ -52,10 +74,14 @@ class MainActivity : AppCompatActivity() {
                 converterStrategy.converter(inputValue),
                 converterStrategy.getScale()
             )
-            binding.textviewResultMessage.text = if (this.converterStrategy is CelsiusStrategy){
-                getString(R.string.msgFtoC)
-            }else{
-                getString(R.string.msgCtoF)
+            binding.textviewResultMessage.text = when {
+                this.converterStrategy is CelsiusToKelvin -> getString(R.string.msgCtoK)
+                this.converterStrategy is CelsiusToFahrenheit -> getString(R.string.msgCtoF)
+                this.converterStrategy is FahrenheitToKelvin -> getString(R.string.msgFtoK)
+                this.converterStrategy is FahrenheitToCelsius -> getString(R.string.msgFtoC)
+                this.converterStrategy is KelvinToCelsius -> getString(R.string.msgKtoC)
+                this.converterStrategy is KelvinToFahrenheit -> getString(R.string.msgKtoF)
+                else -> getString(R.string.error_popup_notify)
             }
         }catch (e: Exception){
             Toast.makeText(
