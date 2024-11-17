@@ -45,26 +45,70 @@
         app:layout_constraintStart_toEndOf="@id/textview_temperature" />
 
     <Button
-        android:id="@+id/btn_celsius"
+        android:id="@+id/btn_CtoK"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/celsius"
+        android:text="@string/CtoK"
         android:textAllCaps="true"
-        app:layout_constraintEnd_toStartOf="@+id/btn_fahrenheit"
+        app:layout_constraintEnd_toStartOf="@+id/btn_CtoF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_horizontal1" />
 
     <Button
-        android:id="@+id/btn_fahrenheit"
+        android:id="@+id/btn_FtoK"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/fahrenheit"
+        android:text="@string/FtoK"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toStartOf="@+id/btn_FtoC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CtoK" />
+
+    <Button
+        android:id="@+id/btn_KtoC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/KtoC"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toStartOf="@+id/btn_KtoF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_FtoK" />
+
+    <Button
+        android:id="@+id/btn_CtoF"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/CtoF"
         android:textAllCaps="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_celsius"
+        app:layout_constraintStart_toEndOf="@id/btn_CtoK"
         app:layout_constraintTop_toBottomOf="@id/guideline_horizontal1" />
+
+    <Button
+        android:id="@+id/btn_FtoC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/FtoC"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_FtoK"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CtoK" />
+
+    <Button
+        android:id="@+id/btn_KtoF"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/KtoF"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_KtoC"
+        app:layout_constraintTop_toBottomOf="@+id/btn_FtoK" />
 
     <TextView
         android:id="@+id/textview_result_number"

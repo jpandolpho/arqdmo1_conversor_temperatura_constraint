@@ -2,9 +2,17 @@
     <string name="app_name">Conversor de Temperatura</string>
     <string name="temperature">Temperatura:</string>
     <string name="hint_temperature">Digite temperatura</string>
-    <string name="celsius">Celsius</string>
-    <string name="fahrenheit">Fahrenheit</string>
+    <string name="CtoK">Celsius para Kelvin</string>
+    <string name="CtoF">Celsius para Fahrenheit</string>
+    <string name="FtoK">Fahrenheit para Kelvin</string>
+    <string name="FtoC">Fahrenheint para Celsius</string>
+    <string name="KtoC">Kelvin para Celsius</string>
+    <string name="KtoF">Kelvin para Fahrenheit</string>
     <string name="msgCtoF">Realizada a conversão de Celsius para Fahrenheit</string>
+    <string name="msgCtoK">Realizada a conversão de Celsius para Kelvin</string>
+    <string name="msgKtoF">Realizada a conversão de Kelvin para Fahrenheit</string>
+    <string name="msgKtoC">Realizada a conversão de Kelvin para Celsius</string>
+    <string name="msgFtoK">Realizada a conversão de Fahrenheit para Kelvin</string>
     <string name="msgFtoC">Realizada a conversão de Fahrenheit para Celsius</string>
     <string name="error_popup_notify">Não foi possível realizar a conversão de temperatura com os dados informados.</string>
 </resources>
