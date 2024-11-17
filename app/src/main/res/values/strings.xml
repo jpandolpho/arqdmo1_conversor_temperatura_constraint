@@ -5,7 +5,7 @@
     <string name="CtoK">Celsius para Kelvin</string>
     <string name="CtoF">Celsius para Fahrenheit</string>
     <string name="FtoK">Fahrenheit para Kelvin</string>
-    <string name="FtoC">Fahrenheint para Celsius</string>
+    <string name="FtoC">Fahrenheit para Celsius</string>
     <string name="KtoC">Kelvin para Celsius</string>
     <string name="KtoF">Kelvin para Fahrenheit</string>
     <string name="msgCtoF">Realizada a conversão de Celsius para Fahrenheit</string>
